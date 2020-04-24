@@ -2,7 +2,7 @@
 
 echo "Starting container ..."
 
-RESTIC_CMD=restic
+RESTIC_CMD=restic -o s3.region="$AWS_DEFAULT_REGION"
 
 if [ -n "${ROOT_CERT}" ]; then
 	RESTIC_CMD="${RESTIC_CMD} --cert ${ROOT_CERT}"
